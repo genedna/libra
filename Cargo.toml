@@ -3,6 +3,9 @@ name = "libra"
 version = "0.1.0"
 edition = "2024"
 
+[workspace]
+members = [".", "turso/libsqlite3-sys"]
+
 [features]
 default = []
 
@@ -78,3 +81,6 @@ testcontainers = { version = "0.25.2", features = [
     "reusable-containers",
 ] }
 reqwest = { version = "0.12.24", features = ["blocking"] }
+
+[patch.crates-io]
+libsqlite3-sys = { path = "turso/libsqlite3-sys" }
